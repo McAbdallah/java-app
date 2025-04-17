@@ -8,6 +8,7 @@
       community.docker.docker_image:
         name: jpetstoreapp_image
         tag: latest
+        source: build
         build:
           path: "{{ playbook_dir }}"
 
