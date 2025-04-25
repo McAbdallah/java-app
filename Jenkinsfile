@@ -23,7 +23,7 @@ pipeline {
 
         stage('Deploy a container'){
             steps {
-                sh 'echo "${password}" | sudo -s ansible-playbook jpetstoreplaybook.yml'
+                sh 'echo "${password}" | sudo -S ansible-playbook jpetstoreplaybook.yml'
             }
         }
     }
