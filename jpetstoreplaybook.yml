@@ -16,6 +16,7 @@
       community.docker.docker_container:
         name: jpetstoreapp_container
         image: jpetstoreapp_image:latest
+        container_default_behavior: compatibility
         state: started
         ports:
           - "8080:8080"
