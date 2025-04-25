@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         WORKDIR = "${env.WORKSPACE}"
+        password = credentials('passwd')
     }
     stages {
         stage('Validate') {
@@ -22,7 +23,7 @@ pipeline {
 
         stage('Deploy a container'){
             steps {
-                sh 'ansible-playbook jpetstoreplaybook.yml'
+                sh 'echo "${password}" | sudo -s ansible-playbook jpetstoreplaybook.yml'
             }
         }
     }
