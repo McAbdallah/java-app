@@ -1,7 +1,6 @@
 ---
 - name: Build and Run Docker Image for Java App
   hosts: localhost
-  become: true
   tasks:
 
     - name: Build Docker image
