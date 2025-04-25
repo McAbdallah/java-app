@@ -22,8 +22,13 @@ pipeline {
 
         stage('Deploy a container'){
             steps {
-                sh 'echo "0128" | sudo -S ansible-playbook jpetstoreplaybook.yml'
+                sh 'ansible-playbook jpetstoreplaybook.yml'
             }
+        }
+    }
+    post {
+        always{
+            cleanWs()
         }
     }
 }
